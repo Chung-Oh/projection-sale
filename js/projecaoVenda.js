@@ -1,6 +1,6 @@
 "use strict";
 
-// Aplicando máscara de moeda nos campos flutuantes
+// Aplicando máscara de moeda em campos com valores flutuantes
 $(document).ready(function(){
     $('.money').mask('000.000.000.000.000,00', {reverse: true});
 });
@@ -65,7 +65,7 @@ document.querySelector('#limpar').addEventListener('click', function() {
     qtdTotalProdutosElement.focus();
 });
 
-// Limpa campo individualmente e foca nele em seguida
+// Limpa campo individualmente e focando em seguida
 const limparCampo = id => {
     let campo = document.querySelector(id);
     campo.value = null;
@@ -79,7 +79,7 @@ const valorAtacadoElement     = document.querySelector('#valorAtacado');
 const valorVarejoElement      = document.querySelector('#valorVarejo');
 const todosCamposForm = [qtdTotalProdutosElement, custoUnitarioElement, valorAtacadoElement, valorVarejoElement];
 
-// Evento do disparo quando submetido o Form
+// Evento quando submetido o Form
 const calcular = () => {
     const qtdProdAtacado    = parseFloat(qtdTotalProdutosElement.value.replace('.', '').replace(',', '.'));
     const produtoCusto      = parseFloat(custoUnitarioElement.value.replace('.', '').replace(',', '.'));
@@ -128,7 +128,7 @@ const preencherTabela = params => {
     tbody.prepend(tr);
 };
 
-// Alert
+// Alerta
 const alert       = document.querySelector('#alert');
 const bsAlert     = new bootstrap.Alert(alert);
 const exibirAlert = (restanteProduto, lucroRestanteProdutoVarejo) => {
